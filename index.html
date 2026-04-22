@@ -11,28 +11,25 @@
 <style>
 body {
     background: #0b1220;
-    margin: 0;
-    font-family: Arial, sans-serif;
 }
 
-/* ===== VERTICAL LAYOUT ===== */
+/* KEEP TEMPLATE STRUCTURE BUT FORCE STACKING */
 .items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    padding: 60px 20px;
+    display: block !important;
+    padding: 40px 20px;
 }
 
-/* ===== BIG FLIP CARD ===== */
+/* BIG FULL WIDTH CARD */
 .flip-card {
-    width: 80%;
-    max-width: 700px;
+    width: 100%;
+    max-width: 900px;
     height: 260px;
+    margin: 20px auto;
     perspective: 1200px;
     cursor: pointer;
 }
 
+/* INNER FLIP */
 .flip-inner {
     position: relative;
     width: 100%;
@@ -41,7 +38,7 @@ body {
     transform-style: preserve-3d;
 }
 
-/* flip effect */
+/* FLIP ACTIVE */
 .flip-card.flipped .flip-inner {
     transform: rotateY(180deg);
 }
@@ -64,14 +61,12 @@ body {
 }
 
 .flip-front h2 {
-    font-size: 28px;
     color: #38bdf8;
-    margin-bottom: 10px;
+    font-size: 28px;
 }
 
 .flip-front p {
     color: #94a3b8;
-    font-size: 16px;
 }
 
 /* BACK */
@@ -82,25 +77,23 @@ body {
 
 .flip-back h3 {
     color: #2dd4bf;
-    font-size: 24px;
     margin-bottom: 10px;
 }
 
 .flip-back p {
     color: #cbd5e1;
-    font-size: 15px;
     line-height: 1.6;
 }
 
-/* hover glow */
+/* hover effect */
 .flip-card:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
     transition: 0.3s;
 }
 </style>
 </head>
 
-<body>
+<body class="is-preload">
 
 <div id="wrapper">
 
@@ -111,94 +104,60 @@ body {
     <!-- SYSTEMS -->
     <div class="flip-card" onclick="flip(this)">
         <div class="flip-inner">
-
             <div class="flip-front">
                 <h2>How I Think About Systems</h2>
-                <p>Click to explore my approach to system design</p>
+                <p>Click to explore</p>
             </div>
-
             <div class="flip-back">
                 <h3>Systems Thinking</h3>
-                <p>
-                    I start by understanding how data flows across systems.
-                </p>
-                <p>
-                    I look for failure points before building anything.
-                </p>
-                <p>
-                    My focus is simplicity, scalability, and reliability.
-                </p>
+                <p>I analyze how data flows across systems before building anything.</p>
+                <p>I design for simplicity, reliability, and scalability.</p>
             </div>
-
         </div>
     </div>
 
     <!-- CLOUD -->
     <div class="flip-card" onclick="flip(this)">
         <div class="flip-inner">
-
             <div class="flip-front">
                 <h2>Cloud Migration</h2>
-                <p>Click to explore cloud transformation approach</p>
+                <p>Click to explore</p>
             </div>
-
             <div class="flip-back">
                 <h3>Cloud Migration</h3>
-                <p>
-                    Migration is not just moving systems — it is redesigning them.
-                </p>
-                <p>
-                    I ensure minimal downtime and improved performance.
-                </p>
-                <p>
-                    The goal is smoother, scalable cloud adoption.
-                </p>
+                <p>Migration is redesign, not just moving systems.</p>
+                <p>I focus on zero downtime and better performance.</p>
             </div>
-
         </div>
     </div>
 
     <!-- DATA -->
     <div class="flip-card" onclick="flip(this)">
         <div class="flip-inner">
-
             <div class="flip-front">
                 <h2>Data Optimization</h2>
-                <p>Click to explore database performance approach</p>
+                <p>Click to explore</p>
             </div>
-
             <div class="flip-back">
                 <h3>Data Optimization</h3>
-                <p>
-                    I improve database performance through indexing and query tuning.
-                </p>
-                <p>
-                    Efficient structure reduces cost and improves speed.
-                </p>
+                <p>I improve performance using indexing and query tuning.</p>
+                <p>Goal: faster systems, lower cost, better efficiency.</p>
             </div>
-
         </div>
     </div>
 
     <!-- END TO END -->
     <div class="flip-card" onclick="flip(this)">
         <div class="flip-inner">
-
             <div class="flip-front">
                 <h2>End-to-End Cloud Design</h2>
-                <p>Click to explore full system architecture thinking</p>
+                <p>Click to explore</p>
             </div>
-
             <div class="flip-back">
                 <h3>End-to-End Design</h3>
-                <p>
-                    I design full pipelines from ingestion to delivery.
-                </p>
-                <p>
-                    Every layer is built for scalability and reliability.
-                </p>
+                <p>I design full systems from ingestion to delivery.</p>
+                <p>Everything is built for scale and reliability.</p>
             </div>
-
         </div>
     </div>
 
@@ -220,4 +179,5 @@ function flip(card) {
 
 </body>
 </html>
-   
+
+
