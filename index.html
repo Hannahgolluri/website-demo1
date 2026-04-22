@@ -1,220 +1,173 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Designing Systems That Think</title>
+    <title>Cloud & Systems Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-<style>
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: #0f172a; /* deep gray-blue */
-    color: #e2e8f0;
-    overflow-x: hidden;
-}
+    <style>
+        /* ===== THEME COLORS ===== */
+        body {
+            background: #0f172a;
+        }
 
-section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 0 10%;
-    border-bottom: 1px solid #1e293b;
-}
+        .item.thumb {
+            background: #111827;
+            border-radius: 16px;
+            padding: 20px;
+            transition: 0.3s;
+            border: 1px solid #1e293b;
+        }
 
-/* HERO */
-.hero h1 {
-    font-size: 3.5rem;
-    max-width: 700px;
-}
+        .item.thumb:hover {
+            transform: translateY(-6px);
+            border-color: #2dd4bf;
+            box-shadow: 0 10px 25px rgba(45, 212, 191, 0.15);
+        }
 
-.hero p {
-    color: #94a3b8;
-    margin-top: 20px;
-    max-width: 500px;
-}
+        .item.thumb h2 {
+            color: #e2e8f0;
+        }
 
-/* PROJECT SECTIONS */
-.project {
-    cursor: pointer;
-    transition: 0.4s;
-    position: relative;
-}
+        .item.thumb p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-top: 8px;
+        }
 
-.project:hover {
-    background: #111827;
-}
+        /* intro box */
+        .intro {
+            background: linear-gradient(135deg, #111827, #0b1220);
+            border-radius: 18px;
+            padding: 30px;
+            border: 1px solid #1e293b;
+        }
 
-/* subtle teal line on hover */
-.project::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 20%;
-    height: 60%;
-    width: 4px;
-    background: transparent;
-    transition: 0.3s;
-}
+        .intro h1 {
+            color: #38bdf8;
+        }
 
-.project:hover::before {
-    background: #2dd4bf; /* teal */
-}
+        .intro p {
+            color: #cbd5f5;
+        }
 
-.project h2 {
-    font-size: 2.6rem;
-}
+        /* popup readability */
+        .poptrox-popup {
+            background: #0b1220 !important;
+        }
 
-/* CLICK TEXT UPDATED */
-.project p {
-    font-size: 1.2rem; /* 👈 bigger */
-    color: #38bdf8; /* blue */
-    margin-top: 10px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-}
-
-/* EXPAND PANEL */
-.details {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 50%;
-    height: 100%;
-    background: #111827;
-    padding: 50px;
-    transition: 0.5s;
-    overflow-y: auto;
-    box-shadow: -10px 0 40px rgba(0,0,0,0.5);
-}
-
-.details.active {
-    right: 0;
-}
-
-.details h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.details p {
-    color: #cbd5f5;
-    line-height: 1.7;
-    margin-bottom: 15px;
-}
-
-/* CLOSE BUTTON */
-.close {
-    cursor: pointer;
-    font-size: 22px;
-    float: right;
-    color: #94a3b8;
-}
-
-.close:hover {
-    color: #2dd4bf;
-}
-</style>
+        .poptrox-popup .caption {
+            color: #e2e8f0 !important;
+        }
+    </style>
 </head>
 
-<body>
+<body class="is-preload">
 
-<!-- HERO -->
-<section class="hero">
-    <div>
-        <h1>I design systems that think, scale, and last.</h1>
+<div id="wrapper">
+
+<!-- MAIN -->
+<section id="main">
+
+<div class="items">
+
+    <!-- INTRO -->
+    <div class="item intro span-2">
+        <h1>Designing Systems That Think</h1>
         <p>
-            I’m building my path in cloud and database technologies —
-            turning curiosity into real-world systems that are reliable and meaningful.
+            Cloud & Database enthusiast building scalable, reliable systems from curiosity to real-world impact.
         </p>
     </div>
-</section>
 
-<!-- SYSTEM THINKING -->
-<section class="project" onclick="openPanel('system')">
-    <div>
+    <!-- SYSTEMS -->
+    <article class="item thumb span-1">
         <h2>How I Think About Systems</h2>
-        <p>Click to explore →</p>
-    </div>
-</section>
+        <p>Understanding flows, dependencies, and failure points before building anything.</p>
+        <a href="images/fulls/01.jpg" class="image">
+            <img src="images/thumbs/01.jpg" alt="">
+        </a>
+        <div class="caption">
+            <h3>How I Think About Systems</h3>
+            <p>I design systems starting from flow of data, not tools.</p>
+            <p>Goal: simple, scalable, and failure-resistant architecture.</p>
+        </div>
+    </article>
 
-<!-- CLOUD MIGRATION -->
-<section class="project" onclick="openPanel('cloud')">
-    <div>
+    <!-- CLOUD -->
+    <article class="item thumb span-2">
         <h2>Cloud Migration</h2>
-        <p>Click to explore →</p>
-    </div>
-</section>
+        <p>Moving systems into cloud with minimal downtime and better scalability.</p>
+        <a href="images/fulls/02.jpg" class="image">
+            <img src="images/thumbs/02.jpg" alt="">
+        </a>
+        <div class="caption">
+            <h3>Cloud Migration</h3>
+            <p>Migration is redesign + transition, not just movement.</p>
+            <p>Focus on performance, reliability, and smooth cutover.</p>
+        </div>
+    </article>
 
-<!-- DATA OPTIMIZATION -->
-<section class="project" onclick="openPanel('data')">
-    <div>
+    <!-- DATA -->
+    <article class="item thumb span-1">
         <h2>Data Optimization</h2>
-        <p>Click to explore →</p>
-    </div>
-</section>
+        <p>Improving database speed, structure, and efficiency.</p>
+        <a href="images/fulls/03.jpg" class="image">
+            <img src="images/thumbs/03.jpg" alt="">
+        </a>
+        <div class="caption">
+            <h3>Data Optimization</h3>
+            <p>Indexing, query tuning, and schema refinement.</p>
+            <p>Goal: faster systems with lower cost.</p>
+        </div>
+    </article>
 
-<!-- END TO END -->
-<section class="project" onclick="openPanel('design')">
-    <div>
+    <!-- END TO END -->
+    <article class="item thumb span-2">
         <h2>End-to-End Cloud Design</h2>
-        <p>Click to explore →</p>
-    </div>
-</section>
+        <p>Building full lifecycle cloud systems from ingestion to delivery.</p>
+        <a href="images/fulls/04.jpg" class="image">
+            <img src="images/thumbs/04.jpg" alt="">
+        </a>
+        <div class="caption">
+            <h3>End-to-End Cloud Design</h3>
+            <p>From data ingestion → processing → storage → delivery.</p>
+            <p>Everything designed for scale and resilience.</p>
+        </div>
+    </article>
 
-<!-- SIDE PANEL -->
-<div id="panel" class="details">
-    <span class="close" onclick="closePanel()">✕</span>
-    <div id="content"></div>
 </div>
 
+</section>
+
+<!-- FOOTER -->
+<section id="footer">
+    <p>Turning ideas into scalable cloud systems.</p>
+</section>
+
+</div>
+
+<!-- SCRIPTS -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.poptrox.min.js"></script>
+
 <script>
-function openPanel(type) {
-    let text = "";
+$(function() {
+    $('.items').poptrox({
+        usePopupCaption: true,
+        usePopupNav: false,
+        overlayOpacity: 0.85,
 
-    if (type === "system") {
-        text = `
-        <h2>How I Think About Systems</h2>
-        <p>I start by understanding how everything connects — data flow, dependencies, and risks.</p>
-        <p>I design systems that remain simple even when they scale.</p>
-        <p>Reliability is built from the beginning, not added later.</p>`;
-    }
-
-    if (type === "cloud") {
-        text = `
-        <h2>Cloud Migration</h2>
-        <p>Migration is not just moving — it’s transforming systems for flexibility.</p>
-        <p>I focus on minimizing downtime and improving performance.</p>
-        <p>The cloud should simplify systems, not complicate them.</p>`;
-    }
-
-    if (type === "data") {
-        text = `
-        <h2>Data Optimization</h2>
-        <p>I optimize queries, indexing, and structure to improve performance.</p>
-        <p>Faster systems reduce cost and improve user experience.</p>
-        <p>Efficiency is key to scalability.</p>`;
-    }
-
-    if (type === "design") {
-        text = `
-        <h2>End-to-End Cloud Design</h2>
-        <p>I design complete systems from ingestion to delivery.</p>
-        <p>Each layer is built for monitoring, scaling, and resilience.</p>
-        <p>Everything works together seamlessly.</p>`;
-    }
-
-    document.getElementById("content").innerHTML = text;
-    document.getElementById("panel").classList.add("active");
-}
-
-function closePanel() {
-    document.getElementById("panel").classList.remove("active");
-}
+        caption: function($a) {
+            return $a.parent().find('.caption').html();
+        }
+    });
+});
 </script>
 
 </body>
 </html>
+
 
