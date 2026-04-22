@@ -1,205 +1,214 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Cloud Portfolio</title>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="assets/css/main.css" />
-<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<title>Designing Systems That Think</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* =======================
+   DESIGN SYSTEM
+======================= */
+
+:root {
+    --bg: #0b1220;
+    --panel: #111827;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --blue: #38bdf8;
+    --teal: #2dd4bf;
+}
+
 body {
-    background: #0b1220;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
 }
 
-/* ===== FLIP CARD CORE ===== */
-.items {
+/* =======================
+   HERO SECTION
+======================= */
+
+.hero {
+    height: 100vh;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    align-items: center;
+    padding: 0 10%;
 }
 
-.flip-card {
-    width: 280px;
-    height: 220px;
-    perspective: 1000px;
-    cursor: pointer;
+.hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3.8rem;
+    max-width: 800px;
+    line-height: 1.1;
 }
 
-.flip-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
+.hero p {
+    margin-top: 20px;
+    max-width: 550px;
+    color: var(--muted);
+    font-size: 1.1rem;
 }
 
-/* flipped state */
-.flip-card.flipped .flip-inner {
-    transform: rotateY(180deg);
+/* =======================
+   HORIZONTAL PROJECT FLOW
+======================= */
+
+.projects {
+    padding: 100px 0;
+    overflow-x: auto;
+    display: flex;
+    gap: 30px;
+    scroll-snap-type: x mandatory;
 }
 
-.flip-front, .flip-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 14px;
-    backface-visibility: hidden;
-    padding: 20px;
-    box-sizing: border-box;
-    border: 1px solid rgba(148,163,184,0.2);
+.card {
+    min-width: 350px;
+    background: var(--panel);
+    padding: 30px;
+    border-radius: 18px;
+    scroll-snap-align: start;
+    border: 1px solid rgba(148,163,184,0.15);
+    transition: 0.3s;
 }
 
-/* FRONT */
-.flip-front {
-    background: #111827;
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--blue);
 }
 
-.flip-front h2 {
-    color: #38bdf8;
+.card h2 {
+    color: var(--blue);
+    font-size: 1.5rem;
 }
 
-.flip-front p {
-    color: #94a3b8;
+.card p {
+    color: var(--muted);
+    margin-top: 10px;
+    line-height: 1.6;
 }
 
-/* BACK */
-.flip-back {
-    background: #0f172a;
-    transform: rotateY(180deg);
+/* =======================
+   PHILOSOPHY
+======================= */
+
+.philosophy {
+    padding: 120px 10%;
+    max-width: 800px;
 }
 
-.flip-back h3 {
-    color: #2dd4bf;
+.philosophy h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.5rem;
+    color: var(--teal);
 }
 
-.flip-back p {
-    color: #cbd5e1;
-    line-height: 1.5;
+.philosophy p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-top: 20px;
+    font-size: 1.05rem;
 }
 
-/* hover glow */
-.flip-card:hover .flip-inner {
-    box-shadow: 0 10px 25px rgba(56,189,248,0.15);
+/* =======================
+   SMALL FOOTER
+======================= */
+
+footer {
+    text-align: center;
+    padding: 60px;
+    color: var(--muted);
+    border-top: 1px solid rgba(148,163,184,0.15);
 }
+
 </style>
 </head>
 
 <body>
 
-<div id="wrapper">
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <div>
+        <h1>
+            I don’t build applications.<br>
+            I design systems that think, scale, and survive.
+        </h1>
 
-<section id="main">
+        <p>
+            I’m building my path in cloud and database technologies —  
+            transforming curiosity into real-world systems that are reliable, scalable, and meaningful.
+        </p>
+    </div>
+</section>
 
-<div class="items">
+<!-- ================= PROJECT JOURNEY ================= -->
+<section class="projects">
 
-    <!-- SYSTEMS -->
-    <div class="flip-card" onclick="flip(this)">
-        <div class="flip-inner">
-
-            <div class="flip-front">
-                <h2>Systems Thinking</h2>
-                <p>Click to explore</p>
-            </div>
-
-            <div class="flip-back">
-                <h3>How I Think About Systems</h3>
-                <p>
-                    I start by understanding data flow and dependencies.
-                </p>
-                <p>
-                    My goal is simple: build systems that scale without breaking.
-                </p>
-            </div>
-
-        </div>
+    <div class="card">
+        <h2>How I Think About Systems</h2>
+        <p>
+            I start with data flow, dependencies, and failure points — not tools.
+            Systems must be simple before they can be scalable.
+        </p>
     </div>
 
-    <!-- CLOUD -->
-    <div class="flip-card" onclick="flip(this)">
-        <div class="flip-inner">
-
-            <div class="flip-front">
-                <h2>Cloud Migration</h2>
-                <p>Click to explore</p>
-            </div>
-
-            <div class="flip-back">
-                <h3>Cloud Migration</h3>
-                <p>
-                    Migration is redesigning systems for scalability.
-                </p>
-                <p>
-                    Focus: zero disruption + better performance.
-                </p>
-            </div>
-
-        </div>
+    <div class="card">
+        <h2>Cloud Migration</h2>
+        <p>
+            Migration is not movement — it is redesign.
+            I focus on reducing downtime and improving system resilience.
+        </p>
     </div>
 
-    <!-- DATA -->
-    <div class="flip-card" onclick="flip(this)">
-        <div class="flip-inner">
-
-            <div class="flip-front">
-                <h2>Data Optimization</h2>
-                <p>Click to explore</p>
-            </div>
-
-            <div class="flip-back">
-                <h3>Data Optimization</h3>
-                <p>
-                    I tune databases using indexing and query optimization.
-                </p>
-                <p>
-                    Goal: faster systems with lower cost.
-                </p>
-            </div>
-
-        </div>
+    <div class="card">
+        <h2>Data Optimization</h2>
+        <p>
+            I optimize databases through indexing, query tuning, and structure design
+            to improve speed and reduce cost.
+        </p>
     </div>
 
-    <!-- END TO END -->
-    <div class="flip-card" onclick="flip(this)">
-        <div class="flip-inner">
-
-            <div class="flip-front">
-                <h2>End-to-End Design</h2>
-                <p>Click to explore</p>
-            </div>
-
-            <div class="flip-back">
-                <h3>End-to-End Cloud Design</h3>
-                <p>
-                    I design full systems from ingestion to delivery.
-                </p>
-                <p>
-                    Everything is built for scale, reliability, and monitoring.
-                </p>
-            </div>
-
-        </div>
+    <div class="card">
+        <h2>End-to-End Cloud Design</h2>
+        <p>
+            I design full lifecycle systems from ingestion to delivery,
+            ensuring every layer is scalable and observable.
+        </p>
     </div>
-
-</div>
 
 </section>
 
-<section id="footer">
-    <p>Turning ideas into scalable cloud systems.</p>
+<!-- ================= PHILOSOPHY ================= -->
+<section class="philosophy">
+
+    <h2>My Philosophy</h2>
+
+    <p>
+        I believe good systems are invisible — they simply work.
+        Complexity is not a sign of intelligence; clarity is.
+    </p>
+
+    <p>
+        Every system I design begins with one question:
+        <strong>“What will break when this scales?”</strong>
+    </p>
+
+    <p>
+        I focus on building foundations that last — not quick solutions.
+        Cloud architecture, to me, is about designing for change, not stability alone.
+    </p>
+
 </section>
 
-</div>
-
-<script>
-function flip(card) {
-    card.classList.toggle("flipped");
-}
-</script>
+<!-- ================= FOOTER ================= -->
+<footer>
+    Turning ideas into scalable cloud systems.
+</footer>
 
 </body>
 </html>
-
-
-
