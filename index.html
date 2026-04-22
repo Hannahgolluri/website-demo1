@@ -1,46 +1,105 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Cloud & Database Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title>Cloud Portfolio</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<link rel="stylesheet" href="assets/css/main.css" />
+<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <style>
-        body {
-            background: #0b1220;
-        }
+<style>
+body {
+    background: #0b1220;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
-        /* subtle upgrade only */
-        .item.thumb {
-            border-radius: 12px;
-            border: 1px solid rgba(148,163,184,0.15);
-            transition: 0.25s ease;
-        }
+/* ===== VERTICAL LAYOUT ===== */
+.items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 60px 20px;
+}
 
-        .item.thumb:hover {
-            transform: translateY(-4px);
-            border-color: rgba(56,189,248,0.5);
-            box-shadow: 0 8px 20px rgba(56,189,248,0.1);
-        }
+/* ===== BIG FLIP CARD ===== */
+.flip-card {
+    width: 80%;
+    max-width: 700px;
+    height: 260px;
+    perspective: 1200px;
+    cursor: pointer;
+}
 
-        .intro h1 {
-            color: #38bdf8;
-        }
+.flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+}
 
-        .poptrox-popup {
-            background: #0b1220 !important;
-        }
+/* flip effect */
+.flip-card.flipped .flip-inner {
+    transform: rotateY(180deg);
+}
 
-        .poptrox-popup h3 {
-            color: #38bdf8;
-        }
-    </style>
+/* FRONT + BACK */
+.flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    backface-visibility: hidden;
+    padding: 30px;
+    box-sizing: border-box;
+    border: 1px solid rgba(148,163,184,0.2);
+}
+
+/* FRONT */
+.flip-front {
+    background: #111827;
+}
+
+.flip-front h2 {
+    font-size: 28px;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.flip-front p {
+    color: #94a3b8;
+    font-size: 16px;
+}
+
+/* BACK */
+.flip-back {
+    background: #0f172a;
+    transform: rotateY(180deg);
+}
+
+.flip-back h3 {
+    color: #2dd4bf;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.flip-back p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* hover glow */
+.flip-card:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+}
+</style>
 </head>
 
-<!-- ❗ IMPORTANT FIX: remove is-preload -->
 <body>
 
 <div id="wrapper">
@@ -49,60 +108,99 @@
 
 <div class="items">
 
-    <div class="item intro span-2">
-        <h1>Designing Systems That Think</h1>
-        <p>
-            Cloud & Database learner focused on scalable, reliable system design.
-        </p>
+    <!-- SYSTEMS -->
+    <div class="flip-card" onclick="flip(this)">
+        <div class="flip-inner">
+
+            <div class="flip-front">
+                <h2>How I Think About Systems</h2>
+                <p>Click to explore my approach to system design</p>
+            </div>
+
+            <div class="flip-back">
+                <h3>Systems Thinking</h3>
+                <p>
+                    I start by understanding how data flows across systems.
+                </p>
+                <p>
+                    I look for failure points before building anything.
+                </p>
+                <p>
+                    My focus is simplicity, scalability, and reliability.
+                </p>
+            </div>
+
+        </div>
     </div>
 
-    <article class="item thumb span-1">
-        <h2>How I Think About Systems</h2>
-        <a href="images/fulls/01.jpg" class="image">
-            <img src="images/thumbs/01.jpg" alt="">
-        </a>
-        <div class="caption">
-            <h3>How I Think About Systems</h3>
-            <p>I focus on how data flows, not just tools.</p>
-            <p>I design for simplicity, clarity, and failure resistance.</p>
-        </div>
-    </article>
+    <!-- CLOUD -->
+    <div class="flip-card" onclick="flip(this)">
+        <div class="flip-inner">
 
-    <article class="item thumb span-2">
-        <h2>Cloud Migration</h2>
-        <a href="images/fulls/02.jpg" class="image">
-            <img src="images/thumbs/02.jpg" alt="">
-        </a>
-        <div class="caption">
-            <h3>Cloud Migration</h3>
-            <p>Migration is redesigning systems for scalability.</p>
-            <p>I ensure minimal downtime and better performance.</p>
-        </div>
-    </article>
+            <div class="flip-front">
+                <h2>Cloud Migration</h2>
+                <p>Click to explore cloud transformation approach</p>
+            </div>
 
-    <article class="item thumb span-1">
-        <h2>Data Optimization</h2>
-        <a href="images/fulls/03.jpg" class="image">
-            <img src="images/thumbs/03.jpg" alt="">
-        </a>
-        <div class="caption">
-            <h3>Data Optimization</h3>
-            <p>I optimize queries and structure for performance.</p>
-            <p>Goal: faster systems, lower cost.</p>
-        </div>
-    </article>
+            <div class="flip-back">
+                <h3>Cloud Migration</h3>
+                <p>
+                    Migration is not just moving systems — it is redesigning them.
+                </p>
+                <p>
+                    I ensure minimal downtime and improved performance.
+                </p>
+                <p>
+                    The goal is smoother, scalable cloud adoption.
+                </p>
+            </div>
 
-    <article class="item thumb span-2">
-        <h2>End-to-End Cloud Design</h2>
-        <a href="images/fulls/04.jpg" class="image">
-            <img src="images/thumbs/04.jpg" alt="">
-        </a>
-        <div class="caption">
-            <h3>End-to-End Cloud Design</h3>
-            <p>From ingestion to delivery, I design full systems.</p>
-            <p>Built for scale, monitoring, and reliability.</p>
         </div>
-    </article>
+    </div>
+
+    <!-- DATA -->
+    <div class="flip-card" onclick="flip(this)">
+        <div class="flip-inner">
+
+            <div class="flip-front">
+                <h2>Data Optimization</h2>
+                <p>Click to explore database performance approach</p>
+            </div>
+
+            <div class="flip-back">
+                <h3>Data Optimization</h3>
+                <p>
+                    I improve database performance through indexing and query tuning.
+                </p>
+                <p>
+                    Efficient structure reduces cost and improves speed.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- END TO END -->
+    <div class="flip-card" onclick="flip(this)">
+        <div class="flip-inner">
+
+            <div class="flip-front">
+                <h2>End-to-End Cloud Design</h2>
+                <p>Click to explore full system architecture thinking</p>
+            </div>
+
+            <div class="flip-back">
+                <h3>End-to-End Design</h3>
+                <p>
+                    I design full pipelines from ingestion to delivery.
+                </p>
+                <p>
+                    Every layer is built for scalability and reliability.
+                </p>
+            </div>
+
+        </div>
+    </div>
 
 </div>
 
@@ -114,26 +212,12 @@
 
 </div>
 
-<!-- SCRIPTS -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.poptrox.min.js"></script>
-
 <script>
-$(function() {
-    $('.items').poptrox({
-        usePopupCaption: true,
-        usePopupNav: false,
-        overlayOpacity: 0.85,
-
-        caption: function($a) {
-            return $a.parent().find('.caption').html();
-        }
-    });
-});
+function flip(card) {
+    card.classList.toggle("flipped");
+}
 </script>
 
 </body>
 </html>
-
-
- 
+   
