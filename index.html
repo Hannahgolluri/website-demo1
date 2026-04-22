@@ -1,170 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Designing Systems That Think</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: #0b0f19;
-            color: #e6edf3;
-        }
-
-        section {
-            padding: 80px 10%;
-        }
-
-        /* HERO */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-family: 'Playfair Display', serif;
-            max-width: 800px;
-        }
-
-        .hero p {
-            margin-top: 20px;
-            max-width: 500px;
-            line-height: 1.6;
-            color: #9fb3c8;
-        }
-
-        /* SCROLL GALLERY */
-        .gallery {
-            display: flex;
-            overflow-x: auto;
-            gap: 40px;
-            padding-bottom: 20px;
-        }
-
-        .card {
-            min-width: 300px;
-            background: #111827;
-            border-radius: 20px;
-            padding: 30px;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card h2 {
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: #9fb3c8;
-        }
-
-        /* PHILOSOPHY */
-        .philosophy {
-            max-width: 700px;
-        }
-
-        .philosophy h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-        }
-
-        .philosophy p {
-            margin-top: 20px;
-            line-height: 1.7;
-            color: #9fb3c8;
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 0.9rem;
-            color: #6b7280;
-        }
-    </style>
+    <title>Hannah Moses | Cloud & Database Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 
-<body>
+<body class="is-preload">
 
-<!-- HERO -->
-<section class="hero">
-    <h1>
-        I don’t just build systems.<br>
-        I design how they think, scale, and survive.
-    </h1>
+<div id="wrapper">
 
-    <p>
-        I’m building my path in cloud and database technologies —
-        starting from curiosity and growing into real-world problem solving.
-        I care about creating systems that are reliable, simple, and meaningful.
-    </p>
-</section>
+<!-- MAIN -->
+<section id="main">
 
-<!-- PROJECT JOURNEY -->
-<section>
-    <h2>Selected Work</h2>
+<div class="items">
 
-    <div class="gallery">
-        <div class="card">
-            <h2>Cloud Migration</h2>
-            <p>Moving systems from limitation to scalability with minimal disruption.</p>
-        </div>
+    <!-- ABOUT ME -->
+    <div class="item intro span-2">
+        <h1>Designing Systems That Think</h1>
 
-        <div class="card">
-            <h2>Database Optimization</h2>
-            <p>Turning slow queries into efficient, scalable data flows.</p>
-        </div>
+        <p>
+            I’m building my path in cloud and database technologies,
+            starting from curiosity and growing into real-world problem solving.
+        </p>
 
-        <div class="card">
-            <h2>Secure Data Pipeline</h2>
-            <p>Designing pipelines that protect, process, and deliver trusted data.</p>
-        </div>
-
-        <div class="card">
-            <h2>System Thinking</h2>
-            <p>Every project begins with understanding how parts connect and evolve.</p>
-        </div>
+        <p>
+            I design systems that turn raw data into scalable solutions —
+            focusing on reliability, simplicity, and meaningful impact.
+        </p>
     </div>
-</section>
 
-<!-- PHILOSOPHY -->
-<section class="philosophy">
-    <h2>My Philosophy</h2>
+    <!-- PROJECTS -->
+    <article class="item thumb span-1">
+        <h2>How I Think About Systems</h2>
+        <a href="images/fulls/01.jpg" class="image">
+            <img src="images/thumbs/01.jpg" alt="System Thinking">
+        </a>
+    </article>
 
-    <p>
-        Technology is not just about tools — it’s about decisions.
-        Every system reflects the thinking behind it.
-    </p>
+    <article class="item thumb span-2">
+        <h2>Cloud Migration</h2>
+        <a href="images/fulls/02.jpg" class="image">
+            <img src="images/thumbs/02.jpg" alt="Cloud Migration">
+        </a>
+    </article>
 
-    <p>
-        I focus on simplicity first. Because simple systems scale better,
-        fail less, and are easier to trust.
-    </p>
+    <article class="item thumb span-1">
+        <h2>Database Optimization</h2>
+        <a href="images/fulls/03.jpg" class="image">
+            <img src="images/thumbs/03.jpg" alt="Database Optimization">
+        </a>
+    </article>
 
-    <p>
-        I believe good cloud architecture is invisible — it just works,
-        adapts, and grows without friction.
-    </p>
+    <article class="item thumb span-1">
+        <h2>Secure Data Pipeline</h2>
+        <a href="images/fulls/04.jpg" class="image">
+            <img src="images/thumbs/04.jpg" alt="Data Pipeline">
+        </a>
+    </article>
 
-    <p>
-        I’m not chasing complexity. I’m building clarity.
-    </p>
+    <article class="item thumb span-3">
+        <h2>Scalable Architecture</h2>
+        <a href="images/fulls/05.jpg" class="image">
+            <img src="images/thumbs/05.jpg" alt="Architecture">
+        </a>
+    </article>
+
+    <article class="item thumb span-1">
+        <h2>Performance Tuning</h2>
+        <a href="images/fulls/06.jpg" class="image">
+            <img src="images/thumbs/06.jpg" alt="Performance">
+        </a>
+    </article>
+
+    <article class="item thumb span-2">
+        <h2>Automation & Monitoring</h2>
+        <a href="images/fulls/07.jpg" class="image">
+            <img src="images/thumbs/07.jpg" alt="Automation">
+        </a>
+    </article>
+
+    <article class="item thumb span-2">
+        <h2>Reliable Systems</h2>
+        <a href="images/fulls/08.jpg" class="image">
+            <img src="images/thumbs/08.jpg" alt="Reliability">
+        </a>
+    </article>
+
+</div>
+
+<!-- SECOND ROW (OPTIONAL KEEP OR REMOVE DUPLICATES) -->
+<div class="items">
+
+    <article class="item thumb span-3">
+        <h2>End-to-End Cloud Design</h2>
+        <a href="images/fulls/05.jpg" class="image">
+            <img src="images/thumbs/05.jpg" alt="">
+        </a>
+    </article>
+
+    <article class="item thumb span-1">
+        <h2>System Optimization</h2>
+        <a href="images/fulls/06.jpg" class="image">
+            <img src="images/thumbs/06.jpg" alt="">
+        </a>
+    </article>
+
+    <article class="item thumb span-2">
+        <h2>Data Flow Engineering</h2>
+        <a href="images/fulls/07.jpg" class="image">
+            <img src="images/thumbs/07.jpg" alt="">
+        </a>
+    </article>
+
+    <article class="item thumb span-2">
+        <h2>Observability</h2>
+        <a href="images/fulls/08.jpg" class="image">
+            <img src="images/thumbs/08.jpg" alt="">
+        </a>
+    </article>
+
+</div>
+
 </section>
 
 <!-- FOOTER -->
-<footer>
-    Turning ideas into systems that grow with demand.
-</footer>
+<section id="footer">
+    <section>
+        <p>
+            Turning ideas <strong>into systems</strong> that grow with demand.
+        </p>
+    </section>
+
+    <section>
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+
+        <ul class="copyright">
+            <li>&copy; Hannah Moses</li>
+        </ul>
+    </section>
+</section>
+
+</div>
+
+<!-- SCRIPTS -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.poptrox.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>
