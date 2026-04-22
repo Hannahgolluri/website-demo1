@@ -13,44 +13,40 @@ body {
     background: #0b1220;
 }
 
-/* KEEP TEMPLATE STRUCTURE BUT FORCE STACKING */
+/* ===== FLIP CARD CORE ===== */
 .items {
-    display: block !important;
-    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-/* BIG FULL WIDTH CARD */
 .flip-card {
-    width: 100%;
-    max-width: 900px;
-    height: 260px;
-    margin: 20px auto;
-    perspective: 1200px;
+    width: 280px;
+    height: 220px;
+    perspective: 1000px;
     cursor: pointer;
 }
 
-/* INNER FLIP */
 .flip-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.7s;
+    transition: transform 0.6s;
     transform-style: preserve-3d;
 }
 
-/* FLIP ACTIVE */
+/* flipped state */
 .flip-card.flipped .flip-inner {
     transform: rotateY(180deg);
 }
 
-/* FRONT + BACK */
 .flip-front, .flip-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 16px;
+    border-radius: 14px;
     backface-visibility: hidden;
-    padding: 30px;
+    padding: 20px;
     box-sizing: border-box;
     border: 1px solid rgba(148,163,184,0.2);
 }
@@ -62,7 +58,6 @@ body {
 
 .flip-front h2 {
     color: #38bdf8;
-    font-size: 28px;
 }
 
 .flip-front p {
@@ -77,23 +72,21 @@ body {
 
 .flip-back h3 {
     color: #2dd4bf;
-    margin-bottom: 10px;
 }
 
 .flip-back p {
     color: #cbd5e1;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
-/* hover effect */
-.flip-card:hover {
-    transform: scale(1.01);
-    transition: 0.3s;
+/* hover glow */
+.flip-card:hover .flip-inner {
+    box-shadow: 0 10px 25px rgba(56,189,248,0.15);
 }
 </style>
 </head>
 
-<body class="is-preload">
+<body>
 
 <div id="wrapper">
 
@@ -104,60 +97,88 @@ body {
     <!-- SYSTEMS -->
     <div class="flip-card" onclick="flip(this)">
         <div class="flip-inner">
+
             <div class="flip-front">
-                <h2>How I Think About Systems</h2>
+                <h2>Systems Thinking</h2>
                 <p>Click to explore</p>
             </div>
+
             <div class="flip-back">
-                <h3>Systems Thinking</h3>
-                <p>I analyze how data flows across systems before building anything.</p>
-                <p>I design for simplicity, reliability, and scalability.</p>
+                <h3>How I Think About Systems</h3>
+                <p>
+                    I start by understanding data flow and dependencies.
+                </p>
+                <p>
+                    My goal is simple: build systems that scale without breaking.
+                </p>
             </div>
+
         </div>
     </div>
 
     <!-- CLOUD -->
     <div class="flip-card" onclick="flip(this)">
         <div class="flip-inner">
+
             <div class="flip-front">
                 <h2>Cloud Migration</h2>
                 <p>Click to explore</p>
             </div>
+
             <div class="flip-back">
                 <h3>Cloud Migration</h3>
-                <p>Migration is redesign, not just moving systems.</p>
-                <p>I focus on zero downtime and better performance.</p>
+                <p>
+                    Migration is redesigning systems for scalability.
+                </p>
+                <p>
+                    Focus: zero disruption + better performance.
+                </p>
             </div>
+
         </div>
     </div>
 
     <!-- DATA -->
     <div class="flip-card" onclick="flip(this)">
         <div class="flip-inner">
+
             <div class="flip-front">
                 <h2>Data Optimization</h2>
                 <p>Click to explore</p>
             </div>
+
             <div class="flip-back">
                 <h3>Data Optimization</h3>
-                <p>I improve performance using indexing and query tuning.</p>
-                <p>Goal: faster systems, lower cost, better efficiency.</p>
+                <p>
+                    I tune databases using indexing and query optimization.
+                </p>
+                <p>
+                    Goal: faster systems with lower cost.
+                </p>
             </div>
+
         </div>
     </div>
 
     <!-- END TO END -->
     <div class="flip-card" onclick="flip(this)">
         <div class="flip-inner">
+
             <div class="flip-front">
-                <h2>End-to-End Cloud Design</h2>
+                <h2>End-to-End Design</h2>
                 <p>Click to explore</p>
             </div>
+
             <div class="flip-back">
-                <h3>End-to-End Design</h3>
-                <p>I design full systems from ingestion to delivery.</p>
-                <p>Everything is built for scale and reliability.</p>
+                <h3>End-to-End Cloud Design</h3>
+                <p>
+                    I design full systems from ingestion to delivery.
+                </p>
+                <p>
+                    Everything is built for scale, reliability, and monitoring.
+                </p>
             </div>
+
         </div>
     </div>
 
@@ -179,5 +200,6 @@ function flip(card) {
 
 </body>
 </html>
+
 
 
