@@ -3,155 +3,149 @@
 <head>
     <title>Hannah Moses | Cloud Portfolio</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b0f19;
+            color: white;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 50px;
+        }
+
+        .card {
+            background: #111827;
+            padding: 30px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h2 {
+            margin: 0;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+        }
+
+        .modal-content {
+            background: #111827;
+            margin: 10% auto;
+            padding: 30px;
+            width: 60%;
+            border-radius: 15px;
+        }
+
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
-<body class="is-preload">
+<body>
 
-<div id="wrapper">
+<h1 style="text-align:center; margin-top:40px;">
+    Designing Systems That Think
+</h1>
 
-<!-- MAIN -->
-<section id="main">
+<div class="container">
 
-<div class="items">
-
-    <!-- INTRO -->
-    <div class="item intro span-2">
-        <h1>Designing Systems That Think</h1>
-        <p>
-            I’m building my path in cloud and database technologies,
-            turning curiosity into real-world solutions.
-        </p>
-        <p>
-            I focus on systems that are simple, scalable, and reliable.
-        </p>
+    <div class="card" onclick="openModal('system')">
+        <h2>How I Think About Systems</h2>
     </div>
 
-    <!-- HOW I THINK -->
-    <article class="item thumb span-1">
-        <h2>How I Think About Systems</h2>
-
-        <a href="images/fulls/01.jpg" class="image">
-            <img src="images/thumbs/01.jpg" alt="" />
-        </a>
-
-        <div class="caption">
-            <h3>How I Think About Systems</h3>
-            <p>
-                I don’t begin with tools — I begin with understanding.
-                Every system is a flow of data, decisions, and dependencies.
-            </p>
-            <p>
-                I focus on designing systems that remain simple even as they scale,
-                reducing failure points and increasing reliability.
-            </p>
-        </div>
-    </article>
-
-    <!-- CLOUD MIGRATION -->
-    <article class="item thumb span-2">
+    <div class="card" onclick="openModal('cloud')">
         <h2>Cloud Migration</h2>
+    </div>
 
-        <a href="images/fulls/02.jpg" class="image">
-            <img src="images/thumbs/02.jpg" alt="" />
-        </a>
-
-        <div class="caption">
-            <h3>Cloud Migration</h3>
-            <p>
-                Migration is not just moving systems — it's redesigning them
-                for flexibility and scalability.
-            </p>
-            <p>
-                I focus on minimizing downtime and ensuring a smooth transition
-                while improving performance in the cloud.
-            </p>
-        </div>
-    </article>
-
-    <!-- DATA OPTIMIZATION -->
-    <article class="item thumb span-1">
+    <div class="card" onclick="openModal('data')">
         <h2>Data Optimization</h2>
+    </div>
 
-        <a href="images/fulls/03.jpg" class="image">
-            <img src="images/thumbs/03.jpg" alt="" />
-        </a>
-
-        <div class="caption">
-            <h3>Data Optimization</h3>
-            <p>
-                I improve database performance by analyzing queries,
-                indexing strategies, and data structure.
-            </p>
-            <p>
-                The goal is faster access, lower cost, and systems
-                that handle growth efficiently.
-            </p>
-        </div>
-    </article>
-
-    <!-- END TO END CLOUD DESIGN -->
-    <article class="item thumb span-2">
+    <div class="card" onclick="openModal('design')">
         <h2>End-to-End Cloud Design</h2>
-
-        <a href="images/fulls/04.jpg" class="image">
-            <img src="images/thumbs/04.jpg" alt="" />
-        </a>
-
-        <div class="caption">
-            <h3>End-to-End Cloud Design</h3>
-            <p>
-                I design complete systems — from data ingestion to processing,
-                storage, and delivery.
-            </p>
-            <p>
-                Every layer is built with reliability, monitoring,
-                and scalability in mind.
-            </p>
-        </div>
-    </article>
+    </div>
 
 </div>
 
-</section>
+<!-- MODALS -->
 
-<!-- FOOTER -->
-<section id="footer">
-    <section>
-        <p>
-            Turning ideas <strong>into systems</strong> that grow with demand.
-        </p>
-    </section>
-</section>
-
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-text"></div>
+    </div>
 </div>
-
-<!-- SCRIPTS -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.poptrox.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
 
 <script>
-/* ENABLE CAPTIONS IN POPUP */
-$(document).ready(function() {
-    $('.items').poptrox({
-        usePopupCaption: true,
-        usePopupNav: true,
-        caption: function($a) {
-            return $a.parent().find('.caption').html();
-        }
-    });
-});
-</script>
+function openModal(type) {
+    let content = "";
 
-<script src="assets/js/main.js"></script>
+    if (type === "system") {
+        content = `
+        <h2>How I Think About Systems</h2>
+        <p>I don’t start with tools — I start with understanding the system.</p>
+        <p>I analyze how data flows, where failures can happen, and how systems scale.</p>
+        <p>My goal is to build systems that stay simple, reliable, and efficient.</p>`;
+    }
+
+    if (type === "cloud") {
+        content = `
+        <h2>Cloud Migration</h2>
+        <p>Migration is not just moving systems — it's redesigning them for scalability.</p>
+        <p>I focus on minimizing downtime and ensuring a smooth transition.</p>
+        <p>The goal is better performance and flexibility in the cloud.</p>`;
+    }
+
+    if (type === "data") {
+        content = `
+        <h2>Data Optimization</h2>
+        <p>I improve database performance using indexing and query optimization.</p>
+        <p>I focus on faster response times and efficient data handling.</p>
+        <p>Systems should scale without slowing down.</p>`;
+    }
+
+    if (type === "design") {
+        content = `
+        <h2>End-to-End Cloud Design</h2>
+        <p>I design complete cloud systems from data ingestion to delivery.</p>
+        <p>Each layer is built for reliability, monitoring, and scalability.</p>
+        <p>Everything works together as one system.</p>`;
+    }
+
+    document.getElementById("modal-text").innerHTML = content;
+    document.getElementById("modal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+</script>
 
 </body>
 </html>
+    
       
-   
+ 
