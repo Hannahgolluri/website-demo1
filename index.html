@@ -11,8 +11,8 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: #0b0f19;
-    color: #e6edf3;
+    background: #0f172a; /* deep gray-blue */
+    color: #e2e8f0;
     overflow-x: hidden;
 }
 
@@ -21,7 +21,7 @@ section {
     display: flex;
     align-items: center;
     padding: 0 10%;
-    border-bottom: 1px solid #1f2937;
+    border-bottom: 1px solid #1e293b;
 }
 
 /* HERO */
@@ -31,7 +31,7 @@ section {
 }
 
 .hero p {
-    color: #9fb3c8;
+    color: #94a3b8;
     margin-top: 20px;
     max-width: 500px;
 }
@@ -40,18 +40,40 @@ section {
 .project {
     cursor: pointer;
     transition: 0.4s;
+    position: relative;
 }
 
 .project:hover {
     background: #111827;
 }
 
-.project h2 {
-    font-size: 2.5rem;
+/* subtle teal line on hover */
+.project::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 20%;
+    height: 60%;
+    width: 4px;
+    background: transparent;
+    transition: 0.3s;
 }
 
+.project:hover::before {
+    background: #2dd4bf; /* teal */
+}
+
+.project h2 {
+    font-size: 2.6rem;
+}
+
+/* CLICK TEXT UPDATED */
 .project p {
-    color: #9fb3c8;
+    font-size: 1.2rem; /* 👈 bigger */
+    color: #38bdf8; /* blue */
+    margin-top: 10px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 /* EXPAND PANEL */
@@ -62,19 +84,37 @@ section {
     width: 50%;
     height: 100%;
     background: #111827;
-    padding: 40px;
+    padding: 50px;
     transition: 0.5s;
     overflow-y: auto;
+    box-shadow: -10px 0 40px rgba(0,0,0,0.5);
 }
 
 .details.active {
     right: 0;
 }
 
+.details h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.details p {
+    color: #cbd5f5;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* CLOSE BUTTON */
 .close {
     cursor: pointer;
-    font-size: 20px;
+    font-size: 22px;
     float: right;
+    color: #94a3b8;
+}
+
+.close:hover {
+    color: #2dd4bf;
 }
 </style>
 </head>
@@ -139,7 +179,7 @@ function openPanel(type) {
         <h2>How I Think About Systems</h2>
         <p>I start by understanding how everything connects — data flow, dependencies, and risks.</p>
         <p>I design systems that remain simple even when they scale.</p>
-        <p>Reliability is not added later — it is designed from the beginning.</p>`;
+        <p>Reliability is built from the beginning, not added later.</p>`;
     }
 
     if (type === "cloud") {
@@ -147,23 +187,23 @@ function openPanel(type) {
         <h2>Cloud Migration</h2>
         <p>Migration is not just moving — it’s transforming systems for flexibility.</p>
         <p>I focus on minimizing downtime and improving performance.</p>
-        <p>The cloud should make systems easier, not more complex.</p>`;
+        <p>The cloud should simplify systems, not complicate them.</p>`;
     }
 
     if (type === "data") {
         text = `
         <h2>Data Optimization</h2>
         <p>I optimize queries, indexing, and structure to improve performance.</p>
-        <p>Fast systems create better user experience and lower costs.</p>
-        <p>Efficiency is the foundation of scalability.</p>`;
+        <p>Faster systems reduce cost and improve user experience.</p>
+        <p>Efficiency is key to scalability.</p>`;
     }
 
     if (type === "design") {
         text = `
         <h2>End-to-End Cloud Design</h2>
-        <p>I design full systems — from ingestion to storage to delivery.</p>
-        <p>Every layer is built for monitoring, scaling, and resilience.</p>
-        <p>Everything works together as one system.</p>`;
+        <p>I design complete systems from ingestion to delivery.</p>
+        <p>Each layer is built for monitoring, scaling, and resilience.</p>
+        <p>Everything works together seamlessly.</p>`;
     }
 
     document.getElementById("content").innerHTML = text;
@@ -177,5 +217,4 @@ function closePanel() {
 
 </body>
 </html>
-    
- 
+
