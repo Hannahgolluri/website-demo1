@@ -1,112 +1,181 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Hannah Moses | Cloud Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Designing Systems That Think</title>
 
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0b0f19;
+    color: #e6edf3;
+    overflow-x: hidden;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    border-bottom: 1px solid #1f2937;
+}
+
+/* HERO */
+.hero h1 {
+    font-size: 3.5rem;
+    max-width: 700px;
+}
+
+.hero p {
+    color: #9fb3c8;
+    margin-top: 20px;
+    max-width: 500px;
+}
+
+/* PROJECT SECTIONS */
+.project {
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.project:hover {
+    background: #111827;
+}
+
+.project h2 {
+    font-size: 2.5rem;
+}
+
+.project p {
+    color: #9fb3c8;
+}
+
+/* EXPAND PANEL */
+.details {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 50%;
+    height: 100%;
+    background: #111827;
+    padding: 40px;
+    transition: 0.5s;
+    overflow-y: auto;
+}
+
+.details.active {
+    right: 0;
+}
+
+.close {
+    cursor: pointer;
+    font-size: 20px;
+    float: right;
+}
+</style>
 </head>
 
-<body class="is-preload">
+<body>
 
-<div id="wrapper">
-
-<!-- MAIN -->
-<section id="main">
-
-<div class="items">
-
-    <!-- INTRO -->
-    <div class="item intro span-2">
-        <h1>Designing Systems That Think</h1>
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>I design systems that think, scale, and last.</h1>
         <p>
-            I build cloud and database systems that turn ideas into scalable solutions.
+            I’m building my path in cloud and database technologies —
+            turning curiosity into real-world systems that are reliable and meaningful.
         </p>
     </div>
+</section>
 
-    <!-- SYSTEM THINKING -->
-    <article class="item thumb span-1">
+<!-- SYSTEM THINKING -->
+<section class="project" onclick="openPanel('system')">
+    <div>
         <h2>How I Think About Systems</h2>
-        <a href="images/fulls/01.jpg" class="image">
-            <img src="images/thumbs/01.jpg" alt="">
-        </a>
-        <div class="caption">
-            <h3>How I Think About Systems</h3>
-            <p>I start by understanding how data flows and where systems can fail.</p>
-            <p>My goal is to keep systems simple, scalable, and reliable.</p>
-        </div>
-    </article>
+        <p>Click to explore →</p>
+    </div>
+</section>
 
-    <!-- CLOUD MIGRATION -->
-    <article class="item thumb span-2">
+<!-- CLOUD MIGRATION -->
+<section class="project" onclick="openPanel('cloud')">
+    <div>
         <h2>Cloud Migration</h2>
-        <a href="images/fulls/02.jpg" class="image">
-            <img src="images/thumbs/02.jpg" alt="">
-        </a>
-        <div class="caption">
-            <h3>Cloud Migration</h3>
-            <p>Migration is about redesigning systems for scalability, not just moving them.</p>
-            <p>I ensure minimal downtime and improved performance.</p>
-        </div>
-    </article>
+        <p>Click to explore →</p>
+    </div>
+</section>
 
-    <!-- DATA OPTIMIZATION -->
-    <article class="item thumb span-1">
+<!-- DATA OPTIMIZATION -->
+<section class="project" onclick="openPanel('data')">
+    <div>
         <h2>Data Optimization</h2>
-        <a href="images/fulls/03.jpg" class="image">
-            <img src="images/thumbs/03.jpg" alt="">
-        </a>
-        <div class="caption">
-            <h3>Data Optimization</h3>
-            <p>I improve performance using indexing, query tuning, and efficient structure.</p>
-            <p>The goal is faster systems that scale smoothly.</p>
-        </div>
-    </article>
+        <p>Click to explore →</p>
+    </div>
+</section>
 
-    <!-- END TO END DESIGN -->
-    <article class="item thumb span-2">
+<!-- END TO END -->
+<section class="project" onclick="openPanel('design')">
+    <div>
         <h2>End-to-End Cloud Design</h2>
-        <a href="images/fulls/04.jpg" class="image">
-            <img src="images/thumbs/04.jpg" alt="">
-        </a>
-        <div class="caption">
-            <h3>End-to-End Cloud Design</h3>
-            <p>I design full systems from ingestion to storage and delivery.</p>
-            <p>Each layer is built for scalability, monitoring, and reliability.</p>
-        </div>
-    </article>
-
-</div>
-
+        <p>Click to explore →</p>
+    </div>
 </section>
 
-<!-- FOOTER -->
-<section id="footer">
-    <p>Turning ideas into systems that grow with demand.</p>
-</section>
-
+<!-- SIDE PANEL -->
+<div id="panel" class="details">
+    <span class="close" onclick="closePanel()">✕</span>
+    <div id="content"></div>
 </div>
-
-<!-- SCRIPTS -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.poptrox.min.js"></script>
 
 <script>
-$(function() {
-    $('.items').poptrox({
-        usePopupCaption: true,
-        usePopupNav: false,   // 🚫 stops slideshow behavior
-        overlayOpacity: 0.85,
-        popupCloserText: 'Close',
+function openPanel(type) {
+    let text = "";
 
-        caption: function($a) {
-            return $a.parent().find('.caption').html();
-        }
-    });
-});
+    if (type === "system") {
+        text = `
+        <h2>How I Think About Systems</h2>
+        <p>I start by understanding how everything connects — data flow, dependencies, and risks.</p>
+        <p>I design systems that remain simple even when they scale.</p>
+        <p>Reliability is not added later — it is designed from the beginning.</p>`;
+    }
+
+    if (type === "cloud") {
+        text = `
+        <h2>Cloud Migration</h2>
+        <p>Migration is not just moving — it’s transforming systems for flexibility.</p>
+        <p>I focus on minimizing downtime and improving performance.</p>
+        <p>The cloud should make systems easier, not more complex.</p>`;
+    }
+
+    if (type === "data") {
+        text = `
+        <h2>Data Optimization</h2>
+        <p>I optimize queries, indexing, and structure to improve performance.</p>
+        <p>Fast systems create better user experience and lower costs.</p>
+        <p>Efficiency is the foundation of scalability.</p>`;
+    }
+
+    if (type === "design") {
+        text = `
+        <h2>End-to-End Cloud Design</h2>
+        <p>I design full systems — from ingestion to storage to delivery.</p>
+        <p>Every layer is built for monitoring, scaling, and resilience.</p>
+        <p>Everything works together as one system.</p>`;
+    }
+
+    document.getElementById("content").innerHTML = text;
+    document.getElementById("panel").classList.add("active");
+}
+
+function closePanel() {
+    document.getElementById("panel").classList.remove("active");
+}
 </script>
 
 </body>
 </html>
+    
+ 
