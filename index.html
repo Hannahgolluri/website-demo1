@@ -1,214 +1,191 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Curiosity to Cloud | Junior Cloud Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      overflow-x: hidden;
+    }
 
-<title>Designing Systems That Think</title>
+    section { padding: 80px 10%; }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+    h1, h2 { margin-bottom: 20px; }
 
-<style>
+    /* HERO */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 
-/* =======================
-   DESIGN SYSTEM
-======================= */
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+    }
 
-:root {
-    --bg: #0b1220;
-    --panel: #111827;
-    --text: #e2e8f0;
-    --muted: #94a3b8;
-    --blue: #38bdf8;
-    --teal: #2dd4bf;
-}
+    .hero p {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
 
-body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', sans-serif;
-}
+    .btn {
+      margin-top: 30px;
+      padding: 12px 24px;
+      border: none;
+      background: #38bdf8;
+      color: black;
+      cursor: pointer;
+      border-radius: 30px;
+      font-weight: 600;
+    }
 
-/* =======================
-   HERO SECTION
-======================= */
+    /* ABOUT */
+    .about { max-width: 700px; }
 
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 0 10%;
-}
+    /* SKILLS */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
 
-.hero h1 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 3.8rem;
-    max-width: 800px;
-    line-height: 1.1;
-}
+    .skill {
+      background: rgba(255,255,255,0.1);
+      padding: 10px 20px;
+      border-radius: 20px;
+      transition: transform 0.3s;
+    }
 
-.hero p {
-    margin-top: 20px;
-    max-width: 550px;
-    color: var(--muted);
-    font-size: 1.1rem;
-}
+    .skill:hover { transform: translateY(-5px); }
 
-/* =======================
-   HORIZONTAL PROJECT FLOW
-======================= */
+    /* PROJECTS */
+    .projects {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+    }
 
-.projects {
-    padding: 100px 0;
-    overflow-x: auto;
-    display: flex;
-    gap: 30px;
-    scroll-snap-type: x mandatory;
-}
+    .project-card {
+      min-width: 300px;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 20px;
+    }
 
-.card {
-    min-width: 350px;
-    background: var(--panel);
-    padding: 30px;
-    border-radius: 18px;
-    scroll-snap-align: start;
-    border: 1px solid rgba(148,163,184,0.15);
-    transition: 0.3s;
-}
+    /* TIMELINE */
+    .timeline div {
+      margin-bottom: 15px;
+    }
 
-.card:hover {
-    transform: translateY(-10px);
-    border-color: var(--blue);
-}
+    /* CONTACT */
+    .contact {
+      text-align: center;
+    }
 
-.card h2 {
-    color: var(--blue);
-    font-size: 1.5rem;
-}
+    footer {
+      text-align: center;
+      padding: 20px;
+      opacity: 0.6;
+    }
 
-.card p {
-    color: var(--muted);
-    margin-top: 10px;
-    line-height: 1.6;
-}
-
-/* =======================
-   PHILOSOPHY
-======================= */
-
-.philosophy {
-    padding: 120px 10%;
-    max-width: 800px;
-}
-
-.philosophy h2 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.5rem;
-    color: var(--teal);
-}
-
-.philosophy p {
-    color: var(--muted);
-    line-height: 1.8;
-    margin-top: 20px;
-    font-size: 1.05rem;
-}
-
-/* =======================
-   SMALL FOOTER
-======================= */
-
-footer {
-    text-align: center;
-    padding: 60px;
-    color: var(--muted);
-    border-top: 1px solid rgba(148,163,184,0.15);
-}
-
-</style>
+  </style>
 </head>
-
 <body>
 
-<!-- ================= HERO ================= -->
-<section class="hero">
-    <div>
-        <h1>
-            I don’t build applications.<br>
-            I design systems that think, scale, and survive.
-        </h1>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>I don’t just use the cloud.<br>I build things that live in it.</h1>
+    <p>Junior Cloud Engineer exploring AWS, automation, and scalable systems.</p>
+    <button class="btn">View My Journey</button>
+  </section>
 
-        <p>
-            I’m building my path in cloud and database technologies —  
-            transforming curiosity into real-world systems that are reliable, scalable, and meaningful.
-        </p>
-    </div>
-</section>
-
-<!-- ================= PROJECT JOURNEY ================= -->
-<section class="projects">
-
-    <div class="card">
-        <h2>How I Think About Systems</h2>
-        <p>
-            I start with data flow, dependencies, and failure points — not tools.
-            Systems must be simple before they can be scalable.
-        </p>
-    </div>
-
-    <div class="card">
-        <h2>Cloud Migration</h2>
-        <p>
-            Migration is not movement — it is redesign.
-            I focus on reducing downtime and improving system resilience.
-        </p>
-    </div>
-
-    <div class="card">
-        <h2>Data Optimization</h2>
-        <p>
-            I optimize databases through indexing, query tuning, and structure design
-            to improve speed and reduce cost.
-        </p>
-    </div>
-
-    <div class="card">
-        <h2>End-to-End Cloud Design</h2>
-        <p>
-            I design full lifecycle systems from ingestion to delivery,
-            ensuring every layer is scalable and observable.
-        </p>
-    </div>
-
-</section>
-
-<!-- ================= PHILOSOPHY ================= -->
-<section class="philosophy">
-
-    <h2>My Philosophy</h2>
-
+  <!-- ABOUT -->
+  <section class="about">
+    <h2>✨ Where It All Started</h2>
     <p>
-        I believe good systems are invisible — they simply work.
-        Complexity is not a sign of intelligence; clarity is.
+      My journey into cloud computing started with curiosity.
+      I wanted to understand how apps work and how systems stay alive 24/7.
+      Today, I’m building that knowledge through AWS and real projects.
     </p>
+  </section>
 
+  <!-- SKILLS -->
+  <section>
+    <h2>⚙️ My Toolkit</h2>
+    <div class="skills-container">
+      <div class="skill">AWS</div>
+      <div class="skill">EC2</div>
+      <div class="skill">S3</div>
+      <div class="skill">VPC</div>
+      <div class="skill">IAM</div>
+      <div class="skill">Linux</div>
+      <div class="skill">Git</div>
+      <div class="skill">Networking</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <h2>🌍 What I’ve Built</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Static Website on AWS</h3>
+        <p>Hosted using S3 with public access and permissions.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Secure VPC Setup</h3>
+        <p>Custom VPC with subnets, routing, and gateway.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>EC2 Deployment</h3>
+        <p>Configured EC2 instance with SSH and security groups.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section>
+    <h2>💭 How I Think About Cloud</h2>
     <p>
-        Every system I design begins with one question:
-        <strong>“What will break when this scales?”</strong>
+      Cloud is not just about services — it’s about responsibility.
+      Systems should be reliable, secure, and simple.
     </p>
+  </section>
 
-    <p>
-        I focus on building foundations that last — not quick solutions.
-        Cloud architecture, to me, is about designing for change, not stability alone.
-    </p>
+  <!-- TIMELINE -->
+  <section class="timeline">
+    <h2>⏳ My Learning Journey</h2>
+    <div>🌱 Started with IT basics</div>
+    <div>☁️ Learned AWS fundamentals</div>
+    <div>🛠 Built projects</div>
+    <div>🚀 Preparing for cloud roles</div>
+  </section>
 
-</section>
+  <!-- CONTACT -->
+  <section class="contact">
+    <h2>💬 Let’s Build Something Together</h2>
+    <p>Email: hgolluri@gmail.com</p>
+    <p>GitHub: github.com/yourprofile</p>
+    <p>LinkedIn: https://www.linkedin.com/in/hannahgolluri/?trk=public-profile-join-page </p>
+  </section>
 
-<!-- ================= FOOTER ================= -->
-<footer>
-    Turning ideas into scalable cloud systems.
-</footer>
+  <footer>
+    Every expert was once a beginner. I’m building my way there.
+  </footer>
 
 </body>
 </html>
